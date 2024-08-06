@@ -23,25 +23,16 @@ if (isset($_POST['submit'])) {
   $sscode = $_POST['cvn'];
   $nameoncard = $_POST['nameoncard'];
 
-
-
   $sql1 = "INSERT INTO `c_billing_data`(`Fname`, `Lname`, `Address`, `City`, `Postalcode`,`Country`,`Contactno`,`email`) VALUES ('$Fname','$Lname','$address','$city','$postalcode','$country','$contactno','$email')";
-
 
   $result = $conn->query($sql1);
 
   if ($result == TRUE) {
-
     //echo "New record created successfully.";
 
   } else {
-
     echo "Error:" . $sql1 . "<br>" . $conn->error;
   }
-
-
-
-
   $sql2 = "INSERT INTO `carddetail`(`C_ID`, `CVN`, `Exp_Date`, `Nameoncard`) VALUES ('$cno','$sscode',' $exp','$nameoncard')";
 
   $result = $conn->query($sql2);
@@ -70,10 +61,7 @@ $email = $_SESSION['email'];
         $firstname = "User";
         $lastname = "";
     }
-
 $conn->close();
-
-
 ?>
 
 <!DOCTYPE html>
@@ -165,19 +153,12 @@ $conn->close();
             <label>Email:</label><br>
 
             <input class="long" type="email" name="email"required><br>
-
-
           </fieldset>
-
-
           <fieldset>
 
             <legend>
               <h2>Payment Details:</h2>
             </legend>
-
-
-
             <input type="radio" name="ccard"required>
             <label>Credit Card</label>
 
@@ -263,9 +244,7 @@ $conn->close();
    
     </footer>
 </body>
-
 </html>
-
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js"></script>
